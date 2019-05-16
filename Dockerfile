@@ -7,6 +7,7 @@ COPY pjsua.conf           /pjsua.conf
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 COPY autocaller.py /autocaller.py
 COPY /short.wav /tmp/message.wav
+COPY healthcheck.py /healthcheck.py
 
 CMD ["/usr/bin/python3", "autocaller.py"]
 HEALTHCHECK --interval=1m CMD /usr/bin/python3 healthcheck.py
